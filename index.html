@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Producción</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>ZAP</h2>
+      <ul id="machine-list"></ul>
+    </aside>
+
+    <main class="main-content">
+      <h1 id="machine-title">Selecciona una máquina</h1>
+
+      <!-- Selector de turno -->
+      <div>
+        <label for="shift-select">Turno:</label>
+        <select id="shift-select">
+          <option value="06:00 - 14:48">06:00 - 14:48</option>
+          <option value="14:08 - 22:18">14:08 - 22:18</option>
+          <option value="22:10 - 06:10">22:10 - 06:10</option>
+        </select>
+      </div>
+
+      <div id="personnel" style="display:none;">
+        <h3>Selecciona personas</h3>
+        <div id="person-checkboxes" class="checkbox-group"></div>
+
+        <label for="product-select">Producto:</label>
+        <select id="product-select"></select>
+
+        <label for="production-input">Producción realizada:</label>
+        <input type="number" id="production-input" min="0">
+
+        <button id="assign-btn">Asignar</button>
+      </div>
+
+      <div class="table-responsive">
+        <table id="assignment-table">
+          <thead>
+            <tr>
+              <th>Máquina</th>
+              <th>Personas</th>
+              <th>Apodo Grupo</th>
+              <th>Artículo</th>
+              <th>Código</th>
+              <th>Producción</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="export-section">
+        <input type="text" id="file-name" placeholder="Nombre del archivo PDF">
+        <button id="download-pdf">Descargar PDF</button>
+        <button id="clear-data">Borrar todo</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal edición -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close-btn">&times;</span>
+      <h2>Editar Asignación</h2>
+
+      <label for="edit-machine">Máquina:</label>
+      <select id="edit-machine"></select>
+
+      <h3>Personas</h3>
+      <div id="edit-persons" class="checkbox-group"></div>
+
+      <label for="edit-product-select">Producto:</label>
+      <select id="edit-product-select"></select>
+
+      <label for="edit-production-input">Producción realizada:</label>
+      <input type="number" id="edit-production-input" min="0">
+
+      <div class="modal-actions">
+        <button id="save-edit">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
