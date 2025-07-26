@@ -1,328 +1,226 @@
-// ======== LISTA DE MÁQUINAS CON GRUPOS ========
 const machineGroups = {
-  "Máquinas M": ["M1", "M2", "M3"],
-  "Prensas P": ["P10", "P11", "P12", "P13"],
-  "Inyectoras D": Array.from({ length: 15 }, (_, i) => `D${i + 1}`),
+  inyeccion: ["D9", "D4", "D7/DT4", "D8/D17 Lentes", "D13/DT8 BMC", "D11", "DT9", "D19/DT6 BMC", "DT5", "D2", "D15", "D3", "D12", "D5", "D6", "D10", "DT10"],
+  montaje: ["P10", "P11", "P12", "P13", "M1", "M2", "M3"]
 };
 
-// ======== PERSONAS POR TURNO Y MÁQUINA ========
-const machinesByShift = {
-  "06:00 - 14:48": {
-    "M1": ["Operario 1", "Operario 2"],
-    "M2": ["Operario 3"],
-    "M3": [],
-    "P10": [],
-    "P11": [],
-    "P12": [],
-    "P13": [],
-    "D1": ["Juan Pérez"],
-    "D9": ["GHERUETZ, FABRICIO EMILIANO"],
-    "D4": ["OCHOA, CESAR FELIPE"],
-  },
-  "14:08 - 22:18": {
-    "M1": ["Operario 4"],
-    "M2": ["Operario 5"],
-    "M3": [],
-    "P10": [],
-    "P11": [],
-    "P12": [],
-    "P13": [],
-    "D1": ["Pedro López"],
-    "D9": ["BUSTAMANTE, ORIANA AGOSTINA"],
-    "D4": [],
-  },
-  "22:10 - 06:10": {
-    "M1": ["Operario 6"],
-    "M2": ["Operario 7"],
-    "M3": [],
-    "P10": [],
-    "P11": [],
-    "P12": [],
-    "P13": [],
-    "D1": ["Carlos Gómez"],
-    "D9": ["FERREYRA, VANINA DE LOS ANGELES"],
-    "D4": [],
-  }
-};
-
-// ======== CATÁLOGO DE PRODUCTOS ========
+// Catálogo normal
 const catalog = [
-  { apodoGrupo: "D1", articulo: "REFL D FG FI 326", codArticulo: "0005424-0" },
-  { apodoGrupo: "D1", articulo: "REFL I FG FI 326", codArticulo: "0005425-0" },
-  { apodoGrupo: "D10-DT10-DT5", articulo: "CONJ REFLECTOR LUZ DE CRUCE FLAT DER PRY AMAROK PA", codArticulo: "1500213-0" },
-  { apodoGrupo: "D10-DT10-DT5", articulo: "CONJ REFLECTOR LUZ DE CRUCE FLAT IZQ PRY AMAROK PA", codArticulo: "1501213-0" }
+  { articulo: "REFL D FG FI 326" },
+  { articulo: "REFL I FG FI 326" },
+  { articulo: "CONJ REFLECTOR LUZ CRUCE FLAT DER" },
+  { articulo: "CONJ REFLECTOR LUZ CRUCE FLAT IZQ" }
 ];
 
-// ======== VARIABLES DE ESTADO ========
-let assignments = JSON.parse(localStorage.getItem("assignments")) || [];
-let selectedMachine = null;
-let selectedShift = "06:00 - 14:48";
-let editIndex = null;
+// Catálogo especial para D10, DT10, DT5
+const specialCatalog = [
+  { codigo: "0095484-6", articulo: "REFL D H7H1 GM VIVA ALUMINIZADO" },
+  { codigo: "0095485-6", articulo: "REFL I H7H1 GM VIVA ALUMINIZADO" },
+  { codigo: "0095540-6", articulo: "REFL D H1 VW AMAROK ALUMINIZADO" },
+  { codigo: "0095541-6", articulo: "REFL I H1 VW AMAROK ALUMINIZADO" },
+  { codigo: "0095542-6", articulo: "REFL D H15 VW AMAROK ALUMINIZADO" },
+  { codigo: "0095543-6", articulo: "REFL I H15 VW AMAROK ALUMINIZADO" },
+  { codigo: "0095587-6", articulo: "REFLECTOR I H7H1 CI C4" },
+  { codigo: "0095756-6", articulo: "REFL D H4 TO640ALUMINIZADO" },
+  { codigo: "0095757-6", articulo: "REFL I H4 TO 640ALUMINIZADO" },
+  { codigo: "0095904-6", articulo: "REFL D H7H7 BAJA GAMA FI 359 ALUMINIZADO" },
+  { codigo: "0095905-6", articulo: "REFL I H7H7 BAJA GAMA FI 359 ALUMINIZADO" },
+  { codigo: "0095912-6", articulo: "REFL D H7H7 ALTA GAMA FI 359 ALUMINIZADO" },
+  { codigo: "0095913-6", articulo: "REFL I H7H7 ALTA GAMA FI 359 ALUMINIZADO" },
+  { codigo: "0095972-6", articulo: "REFL. D H7+H1+LG+LC PE 208 ALUMINIZADO" },
+  { codigo: "0095973-6", articulo: "REFL. I H7+H1+LG+LC PE 208 ALUMINIZADO" },
+  { codigo: "0095986-6", articulo: "REFLECTOR DER H7+H15 FCA X6S ALUMINIZADO" },
+  { codigo: "0095987-6", articulo: "REFLECTOR IZQ H7+H15 FCA X6S ALUMINIZADO" },
+  { codigo: "1426211-0", articulo: "SC REF DER. CRUCE H7 VW AMAROK" },
+  { codigo: "1427211-0", articulo: "SC REF IZQ. CRUCE H7 VW AMAROK" },
+  { codigo: "1500211-0", articulo: "CONJ REFLECTOR LUZ DE CRUCE KINK DER PRY AMAROK PA" },
+  { codigo: "1500311-0", articulo: "CONJ REFLECTOR LUZ DE RUTA DER PRY AMAROK PA2" },
+  { codigo: "1501211-0", articulo: "CONJ REFLECTOR LUZ DE CRUCE KINK IZQ PRY AMAROK PA" },
+  { codigo: "1501311-0", articulo: "CONJ REFLECTOR LUZ DE RUTA IZQ PRY AMAROK PA2" },
+  { codigo: "1508211-0", articulo: "CONJUNTO REFLECTOR CRUCE/RUTA DER PRY 359 MCA2" },
+  { codigo: "1509211-0", articulo: "CONJUNTO REFLECTOR CRUCE/RUTA IZQ PRY 359 MCA2" }
+];
 
-// ======== DOM ELEMENTOS ========
-const shiftSelect = document.getElementById("shift-select");
-const machineList = document.getElementById("machine-list");
-const personDiv = document.getElementById("personnel");
-const personCheckboxes = document.getElementById("person-checkboxes");
-const productSelect = document.getElementById("product-select");
-const productionInput = document.getElementById("production-input");
-const assignBtn = document.getElementById("assign-btn");
-const assignmentTable = document.getElementById("assignment-table");
-const tableBody = assignmentTable.querySelector("tbody");
-const machineTitle = document.getElementById("machine-title");
-const fileNameInput = document.getElementById("file-name");
-const downloadBtn = document.getElementById("download-pdf");
-const clearBtn = document.getElementById("clear-data");
+// Catálogo especial para D11 y DT9
+const specialCatalogD11DT9 = [
+  { codigo: "0005486-0", articulo: "MASCARA PRIMARIA DER GM VIVA" },
+  { codigo: "0005487-0", articulo: "MASCARA PRIMARIA IZQ GM VIVA" },
+  { codigo: "0005902-0", articulo: "MASCARA D NEGRA PR FIAT 359" },
+  { codigo: "0005903-0", articulo: "MASCARA I NEGRA PR FIAT 359" },
+  { codigo: "1322110-0", articulo: "SC CPO+PUNTO FIJO D CIT C4" },
+  { codigo: "1323110-0", articulo: "SC CPO + PUNTO FIJO I CI C4" },
+  { codigo: "1426511-0", articulo: "GA EMBELL D C/AROS REDONDOS VW AMAROK" },
+  { codigo: "1426711-0", articulo: "SC CPO D FT VW AMAROK C/MA" },
+  { codigo: "1427511-0", articulo: "GA EMBELL I C/AROS REDONDOS VW AMAROK" },
+  { codigo: "1427711-0", articulo: "SC CPO I FT VW AMAROK C/RN" },
+  { codigo: "1428110-0", articulo: "SC CPO D ME VW AMAROK CD" },
+  { codigo: "1429110-0", articulo: "SC CPO I ME VW AMAROK CD" },
+  { codigo: "1448110-0", articulo: "SC CPO D MM/ME TO 640 (INY.+ P.FIJ)" },
+  { codigo: "1448513-0", articulo: "MASCARA PRIMARIA DER.C/LC ALUMINIZADA TO" },
+  { codigo: "1448711-0", articulo: "SC CUERPO D FT TO 640 (ALUMINIZADO)" },
+  { codigo: "1449110-0", articulo: "SC CPO I MM/ME TO 640(INY.+P.FIJO)" },
+  { codigo: "1449513-0", articulo: "MASCARA PRIMARIA IZQ.C/LC ALUMINIZADA TO" },
+  { codigo: "1449711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/RN" },
+  { codigo: "1451711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/MA" },
+  { codigo: "1462711-0", articulo: "SC CPO D FT VW AMAROK C/MA NEGRO" },
+  { codigo: "1463711-0", articulo: "SC CPO I FT VW AMAROK C/RN NEGRO" },
+  { codigo: "1469511-6", articulo: "GA EMB NEGROI + LENTE CI C4" },
+  { codigo: "1488711-0", articulo: "SC CPO D FARO TRAS. PE 208 (ALUMINIZADO)" },
+  { codigo: "1489711-0", articulo: "SC CPO I FARO TRAS. PE 208 (ALUMINIZADO)" },
+  { codigo: "1500110-0", articulo: "SUBCONJUNTO CUERPO DER ME PRY AMAROK PA2" },
+  { codigo: "1501110-0", articulo: "SUBCONJUNTO CUERPO IZQ ME PRY AMAROK PA2" },
+  { codigo: "1506110-0", articulo: "SC CUERPO DER H15 ALTA GAMA FCA X6S" },
+  { codigo: "1507110-0", articulo: "SC CUERPO IZQ H15 ALTA GAMA FCA X6S" },
+  { codigo: "1508511-0", articulo: "CONJUNTO MASCARA DER PRY 359 MCA2" },
+  { codigo: "1509511-0", articulo: "CONJUNTO MASCARA IZQ PRY 359 MCA2" }
+];
 
-// Modal edición
-const editModal = document.getElementById("edit-modal");
-const closeModal = document.getElementById("close-modal");
-const editMachineSelect = document.getElementById("edit-machine");
-const editPersonsDiv = document.getElementById("edit-persons");
-const editProductSelect = document.getElementById("edit-product-select");
-const editProductionInput = document.getElementById("edit-production-input");
-const saveEditBtn = document.getElementById("save-edit");
+let selectedGroup = 'inyeccion';
+let selectedMachine = '';
+let assignments = [];
 
-// ======== CAMBIO DE TURNO ========
-shiftSelect.addEventListener("change", () => {
-  selectedShift = shiftSelect.value;
-});
+function switchGroup(group) {
+  selectedGroup = group;
+  document.querySelectorAll('.switch-tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelector(`[data-group="${group}"]`).classList.add('active');
 
-// ======== RENDER MENÚ LATERAL ========
-for (const [groupName, groupMachines] of Object.entries(machineGroups)) {
-  const groupLi = document.createElement("li");
-  groupLi.textContent = groupName;
-  groupLi.style.fontWeight = "bold";
-  machineList.appendChild(groupLi);
-
-  groupMachines.forEach(machine => {
+  const list = document.getElementById("machine-list");
+  list.innerHTML = "";
+  machineGroups[group].forEach(machine => {
     const li = document.createElement("li");
     li.textContent = machine;
-    li.style.paddingLeft = "20px";
-    li.addEventListener("click", () => {
+    li.onclick = () => {
       selectedMachine = machine;
-      machineTitle.textContent = `Asignar personas a ${machine}`;
-      personDiv.style.display = "block";
-      personCheckboxes.innerHTML = "";
+      document.getElementById("machine-title").textContent = `Asignar personas a ${machine}`;
+      document.getElementById("assign-panel").style.display = 'flex';
 
-      const people = machinesByShift[selectedShift][machine] || [];
-      if (people.length === 0) {
-        const noData = document.createElement("p");
-        noData.textContent = "No hay personas para esta máquina";
-        personCheckboxes.appendChild(noData);
-      } else {
-        people.forEach(person => {
-          const label = document.createElement("label");
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.value = person;
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(" " + person));
-          personCheckboxes.appendChild(label);
-        });
-      }
-    });
-    machineList.appendChild(li);
+      const ps = document.getElementById("product-select");
+      ps.innerHTML = "";
+      const listaArticulos =
+        ["D10", "DT10", "DT5"].includes(machine) ? specialCatalog :
+        ["D11", "DT9"].includes(machine) ? specialCatalogD11DT9 :
+        catalog;
+
+      listaArticulos.forEach(p => {
+        const option = document.createElement("option");
+        option.textContent = p.codigo ? `${p.codigo} - ${p.articulo}` : p.articulo;
+        ps.appendChild(option);
+      });
+
+      renderPersonas();
+    };
+    list.appendChild(li);
   });
 }
 
-// ======== RENDER CATÁLOGO EN SELECTS ========
-function renderProductOptions() {
-  productSelect.innerHTML = "";
-  editProductSelect.innerHTML = "";
-  catalog.forEach((item, i) => {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = `${item.apodoGrupo} | ${item.articulo} | ${item.codArticulo}`;
-    productSelect.appendChild(option);
-    editProductSelect.appendChild(option.cloneNode(true));
-  });
-}
-renderProductOptions();
-
-// ======== RENDER TABLA ========
-function renderTable() {
-  tableBody.innerHTML = "";
-  assignmentTable.style.display = assignments.length > 0 ? "table" : "none";
-  assignments.forEach((assign, index) => {
-    const row = tableBody.insertRow();
-    row.insertCell(0).textContent = assign.machine;
-    row.insertCell(1).textContent = assign.persons.join(", ");
-    row.insertCell(2).textContent = assign.product.apodoGrupo;
-    row.insertCell(3).textContent = assign.product.articulo;
-    row.insertCell(4).textContent = assign.product.codArticulo;
-    row.insertCell(5).textContent = assign.produccionRealizada;
-    row.insertCell(6).textContent = assign.date;
-
-    const actionsCell = row.insertCell(7);
-    const editBtn = document.createElement("button");
-    editBtn.textContent = "Editar";
-    editBtn.addEventListener("click", () => openEditModal(index));
-    actionsCell.appendChild(editBtn);
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Borrar";
-    deleteBtn.addEventListener("click", () => deleteAssignment(index));
-    actionsCell.appendChild(deleteBtn);
-  });
-}
-renderTable();
-
-// ======== ASIGNAR ========
-assignBtn.addEventListener("click", () => {
-  const selectedPersons = Array.from(
-    personCheckboxes.querySelectorAll("input:checked")
-  ).map(cb => cb.value);
-  const productIndex = parseInt(productSelect.value);
-  const produccion = parseInt(productionInput.value);
-
-  if (!selectedMachine || selectedPersons.length === 0 || isNaN(productIndex) || isNaN(produccion)) {
-    alert("Selecciona máquina, personas, producto y producción válida.");
-    return;
-  }
-
-  const product = catalog[productIndex];
-  const date = new Date().toLocaleString();
-
-  assignments.push({
-    machine: selectedMachine,
-    persons: selectedPersons,
-    product,
-    produccionRealizada: produccion,
-    date,
-  });
-  localStorage.setItem("assignments", JSON.stringify(assignments));
-  renderTable();
-
-  personCheckboxes.querySelectorAll("input").forEach(cb => (cb.checked = false));
-  productionInput.value = "";
-});
-
-// ======== MODAL EDICIÓN ========
-function openEditModal(index) {
-  editIndex = index;
-  const assign = assignments[index];
-
-  editMachineSelect.innerHTML = "";
-  for (const machine in machinesByShift[selectedShift]) {
-    const option = document.createElement("option");
-    option.value = machine;
-    option.textContent = machine;
-    if (machine === assign.machine) option.selected = true;
-    editMachineSelect.appendChild(option);
-  }
-
-  editPersonsDiv.innerHTML = "";
-  const people = machinesByShift[selectedShift][assign.machine] || [];
-  people.forEach(person => {
+function renderPersonas() {
+  const container = document.getElementById("person-checkboxes");
+  container.innerHTML = "";
+  ["Persona 1", "Persona 2", "Persona 3", "Persona 4"].forEach(p => {
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.value = person;
-    if (assign.persons.includes(person)) checkbox.checked = true;
+    checkbox.value = p;
     label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(" " + person));
-    editPersonsDiv.appendChild(label);
+    label.appendChild(document.createTextNode(" " + p));
+    container.appendChild(label);
+  });
+}
+
+function asignar() {
+  const turno = document.getElementById("shift-select").value;
+  const personas = Array.from(document.querySelectorAll("#person-checkboxes input:checked")).map(cb => cb.value);
+  const productSelect = document.getElementById("product-select");
+  const articuloIndex = productSelect.selectedIndex;
+  if (articuloIndex < 0) {
+    alert("Selecciona un artículo válido.");
+    return;
+  }
+
+  const listaArticulos =
+    ["D10", "DT10", "DT5"].includes(selectedMachine) ? specialCatalog :
+    ["D11", "DT9"].includes(selectedMachine) ? specialCatalogD11DT9 :
+    catalog;
+
+  const producto = listaArticulos[articuloIndex];
+
+  if (!selectedMachine || !personas.length || !producto) {
+    alert("Completa todos los campos.");
+    return;
+  }
+
+  assignments.push({
+    turno,
+    zap: selectedMachine,
+    personas,
+    articulo: producto.articulo,
+    codigo: producto.codigo || "",
+    tipo: selectedGroup
   });
 
-  editProductSelect.value = catalog.findIndex(
-    item =>
-      item.apodoGrupo === assign.product.apodoGrupo &&
-      item.articulo === assign.product.articulo &&
-      item.codArticulo === assign.product.codArticulo
-  );
-  editProductionInput.value = assign.produccionRealizada;
-
-  editModal.style.display = "flex";
+  renderTablas();
 }
 
-saveEditBtn.addEventListener("click", () => {
-  const newMachine = editMachineSelect.value;
-  const newPersons = Array.from(
-    editPersonsDiv.querySelectorAll("input:checked")
-  ).map(cb => cb.value);
-  const newProductIndex = parseInt(editProductSelect.value);
-  const newProduccion = parseInt(editProductionInput.value);
-
-  if (!newMachine || newPersons.length === 0 || isNaN(newProductIndex) || isNaN(newProduccion)) {
-    alert("Completa todos los campos con datos válidos.");
-    return;
-  }
-
-  assignments[editIndex] = {
-    machine: newMachine,
-    persons: newPersons,
-    product: catalog[newProductIndex],
-    produccionRealizada: newProduccion,
-    date: new Date().toLocaleString(),
+function renderTablas() {
+  const tablas = {
+    inyeccion: {
+      "06:00 - 14:48": document.querySelector("#tabla-inyeccion-manana tbody"),
+      "14:08 - 22:18": document.querySelector("#tabla-inyeccion-tarde tbody"),
+      "22:10 - 06:10": document.querySelector("#tabla-inyeccion-noche tbody")
+    },
+    montaje: {
+      "06:00 - 14:48": document.querySelector("#tabla-montaje-manana tbody"),
+      "14:08 - 22:18": document.querySelector("#tabla-montaje-tarde tbody"),
+      "22:10 - 06:10": document.querySelector("#tabla-montaje-noche tbody")
+    }
   };
 
-  localStorage.setItem("assignments", JSON.stringify(assignments));
-  editModal.style.display = "none";
-  renderTable();
-});
+  Object.values(tablas.inyeccion).forEach(t => t.innerHTML = "");
+  Object.values(tablas.montaje).forEach(t => t.innerHTML = "");
 
-closeModal.addEventListener("click", () => {
-  editModal.style.display = "none";
-});
+  assignments.forEach(({ tipo, turno, zap, personas, articulo, codigo }) => {
+    const tipoKey = tipo.toLowerCase();
+    const targetTable = tablas[tipoKey]?.[turno];
+    if (!targetTable) return;
 
-// ======== BORRAR ASIGNACIÓN ========
-function deleteAssignment(index) {
-  if (confirm("¿Seguro que quieres borrar esta asignación?")) {
-    assignments.splice(index, 1);
-    localStorage.setItem("assignments", JSON.stringify(assignments));
-    renderTable();
-  }
+    const row = `<tr>
+      <td>${zap}</td>
+      <td>${personas.join(", ")}</td>
+      <td>${codigo ? `${codigo} - ${articulo}` : articulo}</td>
+      <td>${turno}</td>
+    </tr>`;
+    targetTable.innerHTML += row;
+  });
 }
 
-// ======== DESCARGAR PDF ========
-downloadBtn.addEventListener("click", () => {
-  if (assignments.length === 0) {
-    alert("No hay datos para exportar.");
-    return;
-  }
-
+function descargarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Suponiendo que tienes un select con el turno
-  const turnoSelect = document.getElementById("turno-select");
-  const turnoSeleccionado = turnoSelect ? turnoSelect.value : "Turno no seleccionado";
+  const tipoActual = selectedGroup;
+  const titulo = tipoActual === "inyeccion" ? "Asignaciones Inyección" : "Asignaciones Montaje";
 
-  // Título arriba
-  doc.setFontSize(14);
-  doc.text(`Turno: ${turnoSeleccionado}`, 14, 20);
+  const data = assignments
+    .filter(a => a.tipo === tipoActual)
+    .map(a => [a.zap, a.personas.join(", "), a.articulo, a.turno]); // SOLO ARTÍCULO en PDF
 
-  // Reducir columnas: ZAP, Personas, Artículo
-  const tableData = assignments.map(a => [
-    a.machine,
-    a.persons.join(", "),
-    a.product.articulo
-  ]);
-
+  doc.text(titulo, 14, 20);
   doc.autoTable({
-    startY: 30,
-    head: [["ZAP", "Personas", "Artículo"]],
-    body: tableData,
-    styles: { fontSize: 9 },
-    headStyles: { fillColor: [45, 62, 80] }
+    head: [["ZAP", "Personas", "Artículo", "Turno"]],
+    body: data,
+    startY: 30
   });
 
-  const fileName =
-    fileNameInput.value.trim() ||
-    `Asignaciones_${new Date().toISOString().slice(0, 10)}.pdf`;
-  doc.save(fileName);
-});
+  const nombre = document.getElementById("file-name").value || `asignaciones_${tipoActual}_${Date.now()}`;
+  doc.save(`${nombre}.pdf`);
+}
 
-// ======== LIMPIAR DATOS ========
-clearBtn.addEventListener("click", () => {
-  if (confirm("¿Seguro que quieres borrar todos los datos?")) {
+function limpiarTodo() {
+  if (confirm("¿Borrar todas las asignaciones?")) {
     assignments = [];
-    localStorage.removeItem("assignments");
-    renderTable();
+    renderTablas();
   }
-});
+}
 
-window.addEventListener("load", () => {
-  editModal.style.display = "none";
-});
+window.onload = () => {
+  switchGroup('inyeccion');
+};
