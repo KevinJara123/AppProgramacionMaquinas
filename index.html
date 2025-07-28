@@ -20,7 +20,7 @@
     </aside>
 
     <main class="main-content">
-      <h1 id="machine-title">Selecciona una ZAP</h1>
+      <h1 id="machine-title">F2J</h1>
 
       <div class="assign-section" id="assign-panel" style="display:none;">
         <label for="shift-select">Turno:</label>
@@ -49,19 +49,19 @@
 
       <h3>06:00 - 14:48</h3>
       <table id="tabla-inyeccion-manana">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
 
       <h3>14:08 - 22:18</h3>
       <table id="tabla-inyeccion-tarde">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
 
       <h3>22:10 - 06:10</h3>
       <table id="tabla-inyeccion-noche">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
 
@@ -69,23 +69,56 @@
 
       <h3>06:00 - 14:48</h3>
       <table id="tabla-montaje-manana">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
 
       <h3>14:08 - 22:18</h3>
       <table id="tabla-montaje-tarde">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
 
       <h3>22:10 - 06:10</h3>
       <table id="tabla-montaje-noche">
-        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th></tr></thead>
+        <thead><tr><th>ZAP</th><th>Personas</th><th>Artículo</th><th>Turno</th><th>Acciones</th></tr></thead>
         <tbody></tbody>
       </table>
     </main>
   </div>
+
+  <!-- Modal general para editar asignación -->
+<div id="edit-modal" class="modal">
+  <div class="modal-content">
+    <h3>Editar asignación</h3>
+    <input type="hidden" id="edit-index" />
+
+    <label for="edit-turno">Turno:</label>
+    <select id="edit-turno">
+      <option value="06:00 - 14:48">06:00 - 14:48</option>
+      <option value="14:08 - 22:18">14:08 - 22:18</option>
+      <option value="22:10 - 06:10">22:10 - 06:10</option>
+    </select>
+
+    <label for="edit-zap">ZAP (máquina):</label>
+    <input type="text" id="edit-zap" readonly />
+
+    <h3>Selecciona personas</h3>
+    <div id="edit-person-checkboxes" class="checkbox-group"></div>
+
+    <label for="edit-product-select">Artículo:</label>
+    <select id="edit-product-select"></select>
+
+    <label for="edit-tipo">Tipo:</label>
+    <input type="text" id="edit-tipo" readonly />
+
+    <div class="modal-buttons">
+      <button onclick="guardarEdicion()">Guardar</button>
+      <button onclick="cerrarModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
 
   <script src="js/script.js"></script>
 </body>

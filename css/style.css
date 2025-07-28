@@ -1,3 +1,4 @@
+/* === RESET Y BASE === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +13,7 @@ body {
   overflow: hidden;
 }
 
+/* === CONTENEDORES PRINCIPALES === */
 .dashboard {
   display: flex;
   height: 100%;
@@ -83,6 +85,7 @@ body {
   flex-direction: column;
 }
 
+/* === SECCIÓN DE ASIGNACIÓN === */
 .assign-section {
   display: none;
   flex-direction: column;
@@ -112,6 +115,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* INPUTS Y SELECTS */
 input, select {
   padding: 8px;
   font-size: 1rem;
@@ -120,6 +124,7 @@ input, select {
   width: 100%;
 }
 
+/* BOTONES */
 button {
   padding: 10px;
   background: #2d3e50;
@@ -128,12 +133,14 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background: #50657c;
 }
 
+/* SECCIÓN DE EXPORTACIÓN */
 .export-section {
   display: flex;
   gap: 10px;
@@ -159,6 +166,125 @@ table th, table td {
 table th {
   background-color: #2d3e50;
   color: white;
+}
+
+/* BOTONES DENTRO DE LAS TABLAS (EDITAR Y BORRAR) */
+table button {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin: 0 2px;
+  transition: background-color 0.3s ease;
+}
+
+table button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+table button:first-child:hover {
+  background-color: #0056b3;
+}
+
+table button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+table button:last-child:hover {
+  background-color: #a71d2a;
+}
+
+/* === MODAL === */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.modal-content input[type="text"],
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #2d3e50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background: #50657c;
+}
+#edit-modal {
+  display: none;  /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5); /* fondo semitransparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#edit-modal .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
 }
 
 /* === RESPONSIVE === */
@@ -220,14 +346,46 @@ table th {
   }
 
   table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
+    width: 90%;
     border-radius: 6px;
+    overflow-x: auto;
+    display: table;
   }
 
   table th, table td {
-    min-width: 120px;
-    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    min-width: auto;
+  }
+}
+
+/* === RESPONSIVE MODAL PEQUEÑO === */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+ table {
+    width: 90%;
+    border-radius: 6px;
+    overflow-x: auto;
+    display: table;
+  }
+
+  table th, table td {
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    min-width: auto;
   }
 }
