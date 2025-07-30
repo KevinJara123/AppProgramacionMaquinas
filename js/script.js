@@ -1,15 +1,9 @@
 const machineGroups = {
-  inyeccion: ["D9", "D4", "D7/DT4", "D8/D17 Lentes", "D13","D15", "DT13","DT8","D11", "DT9", "D19/DT6 BMC", "DT5","DT6", "D2", "D15", "D3", "D12", "D5", "D6", "D10", "DT10"],
+  inyeccion: [ "D2", "D3","D4", "D5", "D6","D7","D8","D9","D10","D11","D12","D13","D15","DT4","DT5","DT6","DT8","DT9","DT10","DT13"],
   montaje: ["P10", "P11", "P12", "P13", "M1", "M2", "M3"]
 };
 
-// Catálogo normal
-const catalog = [
-  { articulo: "REFL D FG FI 326" },
-  { articulo: "REFL I FG FI 326" },
-  { articulo: "CONJ REFLECTOR LUZ CRUCE FLAT DER" },
-  { articulo: "CONJ REFLECTOR LUZ CRUCE FLAT IZQ" }
-];
+
 
 // Catálogo especial para D10, DT10, DT5
 const specialCatalog = [
