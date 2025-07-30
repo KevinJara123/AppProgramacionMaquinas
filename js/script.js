@@ -349,8 +349,8 @@ const specialCatalogM2 = [
 
 // Catálogo especial para M3
 const specialCatalogM3 = [
-  { codigo: "1450004-1", articulo: "PRI D H4 ME TO 640 C/DRL OK-52 FT CC" },
-  { codigo: "1451004-1", articulo: "PRI I H4 ME TO 640 C/DRL OK-52 FT CC" },
+  { codigo: "1450004-1", articulo: "PRI D H4 ME TO 640 C/DRL OK-52 FT CC", personas: ["Persona A", "Persona B"] },
+  { codigo: "1451004-1", articulo: "PRI I H4 ME TO 640 C/DRL OK-52 FT CC", personas: ["Persona C", "Persona D"] },
   { codigo: "1469000-0", articulo: "PRID I H7+H1 MM EMB NEGRO CITROEN C4 LOUNGE" },
   { codigo: "1470000-0", articulo: "PRID D H7+H7 MM LL BAJA GAMA FI 359" },
   { codigo: "1472000-0", articulo: "PRID D H7+H7 MM LL ALTA GAMA FI 359" },
