@@ -247,36 +247,36 @@ const specialCatalogD6 = [
 
 // Catálogo especial para D7,DT4
 const specialCatalogD7DT4 = [
-  { codigo: "1318511-6", articulo: "GA EMBELL+FRESNEL+LENTE PE 307 FII" },
-  { codigo: "1322511-6", articulo: "GA D EMB.+FRESNEL+CUPULA+LENTE" },
-  { codigo: "1322711-0", articulo: "SC REF D FT CIT C4 (MONT" },
-  { codigo: "1323511-6", articulo: "GA I EMB.+FRESNEL+CUPULA+LENTE" },
-  { codigo: "1409711-0", articulo: "SC REF I FT FI 326 (ALUMINIZADO)" },
-  { codigo: "1448513-0", articulo: "MASCARA PRIMARIA DER.C/LC ALUMINIZADA TO" },
-  { codigo: "1448711-0", articulo: "SC CUERPO D FT TO 640 (ALUMINIZADO)" },
-  { codigo: "1449513-0", articulo: "MASCARA PRIMARIA IZQ.C/LC ALUMINIZADA TO" },
-  { codigo: "1449711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/RN" },
-  { codigo: "1451711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/MA" },
-  { codigo: "1462711-0", articulo: "SC CPO D FT VW AMAROK C/MA NEGRO" },
-  { codigo: "1463711-0", articulo: "SC CPO I FT VW AMAROK C/RN NEGRO" },
-  { codigo: "1470511-0", articulo: "GRUPO MASCARA DER. FTL FI 359" },
-  { codigo: "1471511-0", articulo: "GRUPO MASCARA IZQ. FTL FI 359" },
-  { codigo: "1476513-0", articulo: "MASCARA PRIMAR.D.C/LC SEMI ALUM.TO DAKAR" },
-  { codigo: "1476711-0", articulo: "SC CUERPO D FT TO640 PARCIAL.ALUM. DAKAR" },
-  { codigo: "1477513-0", articulo: "MASCARA PRIMAR.I.C/LC SEMI ALUM.TO DAKAR" },
-  { codigo: "1477711-0", articulo: "SC CUERPO I FT TO640 PARCIAL.ALUM. DAKAR" },
-  { codigo: "1488711-0", articulo: "SC CPO D FARO TRAS. PE 208 (ALUMINIZADO)" },
-  { codigo: "1489711-0", articulo: "SC CPO I FARO TRAS. PE 208 (ALUMINIZADO)" },
-  { codigo: "1500113-0", articulo: "CONJUNTO SOPORTE DE REGULACION DER PRY AMAROK PA2" },
-  { codigo: "1500711-0", articulo: "SC CPO D C/MA NEGRO FT AMAROK PA2" },
-  { codigo: "1501113-0", articulo: "CONJUNTO SOPORTE DE REGULACION IZQ PRY AMAROK PA2" },
-  { codigo: "1501711-0", articulo: "SC CPO I C/RN NEGRO FT AMAROK PA2" },
-  { codigo: "1508611-0", articulo: "CONJUNTO LUZ DE DIA/POSICION DER PRY 359 MCA2" },
-  { codigo: "1509611-0", articulo: "CONJUNTO LUZ DE DIA/POSICION IZQ PRY 359 MCA2" }
+  { codigo: "1318511-6", articulo: "GA EMBELL+FRESNEL+LENTE PE 307 FII",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1322511-6", articulo: "GA D EMB.+FRESNEL+CUPULA+LENTE",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1322711-0", articulo: "SC REF D FT CIT C4 (MONT",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1323511-6", articulo: "GA I EMB.+FRESNEL+CUPULA+LENTE",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1409711-0", articulo: "SC REF I FT FI 326 (ALUMINIZADO)",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1448513-0", articulo: "MASCARA PRIMARIA DER.C/LC ALUMINIZADA TO",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1448711-0", articulo: "SC CUERPO D FT TO 640 (ALUMINIZADO)",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1449513-0", articulo: "MASCARA PRIMARIA IZQ.C/LC ALUMINIZADA TO",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1449711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/RN",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1451711-0", articulo: "SC CUERPO I FT TO 640 (ALUMINIZADO) C/MA",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1462711-0", articulo: "SC CPO D FT VW AMAROK C/MA NEGRO" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1463711-0", articulo: "SC CPO I FT VW AMAROK C/RN NEGRO",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1470511-0", articulo: "GRUPO MASCARA DER. FTL FI 359" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1471511-0", articulo: "GRUPO MASCARA IZQ. FTL FI 359" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1476513-0", articulo: "MASCARA PRIMAR.D.C/LC SEMI ALUM.TO DAKAR",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1476711-0", articulo: "SC CUERPO D FT TO640 PARCIAL.ALUM. DAKAR" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1477513-0", articulo: "MASCARA PRIMAR.I.C/LC SEMI ALUM.TO DAKAR" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1477711-0", articulo: "SC CUERPO I FT TO640 PARCIAL.ALUM. DAKAR",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1488711-0", articulo: "SC CPO D FARO TRAS. PE 208 (ALUMINIZADO)",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1489711-0", articulo: "SC CPO I FARO TRAS. PE 208 (ALUMINIZADO)",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1500113-0", articulo: "CONJUNTO SOPORTE DE REGULACION DER PRY AMAROK PA2",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1500711-0", articulo: "SC CPO D C/MA NEGRO FT AMAROK PA2",personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"] },
+  { codigo: "1501113-0", articulo: "CONJUNTO SOPORTE DE REGULACION IZQ PRY AMAROK PA2" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1501711-0", articulo: "SC CPO I C/RN NEGRO FT AMAROK PA2" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1508611-0", articulo: "CONJUNTO LUZ DE DIA/POSICION DER PRY 359 MCA2" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]},
+  { codigo: "1509611-0", articulo: "CONJUNTO LUZ DE DIA/POSICION IZQ PRY 359 MCA2" ,personas:["MORENO, ARMANDO ANTONIO", "DELGADO, MARIO", "ZALAZAR, ALEXIS ERICK","CARRERA, ALEJANDRO GABRIEL","COMBA, FEDERICO AMADEO","MOLINA, LUIS FERNANDO"]}
 ];
 // Catálogo especial para D8,DT7
 const specialCatalogD8DT7 = [
-  { codigo: "1322421-0", articulo: "SC LEN PC D CIT C4 (BARNIZADO)" },
+  { codigo: "1322421-0", articulo: "SC LEN PC D CIT C4 (BARNIZADO)",personas:["BUSTOS, CAMILA JACQUELINE","BIANCHI, SANTIAGO MANUEL","BUSTAMANTE, CRISTIAN ANTONIO"] },
   { codigo: "1323421-0", articulo: "SC LEN PC I CIT C4 (BARNIZADO)" },
   { codigo: "1416421-0", articulo: "SC LEN PC D GM VIVA (BARNIZADO)" },
   { codigo: "1417421-0", articulo: "SC LEN PC I GM VIVA (BARNIZADO)" },
@@ -297,21 +297,21 @@ const specialCatalogD8DT7 = [
 
 // Catálogo especial para D9
 const specialCatalogD9 = [
-  { codigo: "1376715-0", articulo: "SC LEN D FTL PE 408 3V" },
-  { codigo: "1377715-0", articulo: "SC LEN I FTL PE 408 3V" },
-  { codigo: "1409715-0", articulo: "SC LEN I FT FI 326 (TRI-COLOR)" },
-  { codigo: "1426715-0", articulo: "SC LEN D FT VW AMAROK (BI COLOR)" },
-  { codigo: "1427715-0", articulo: "SC LEN I FT VW AMAROK (BI COLOR)" },
-  { codigo: "1448715-0", articulo: "SC LEN D FT TO 640 (BI-COLOR) OK-41" },
-  { codigo: "1449715-0", articulo: "SC LEN I FT TO 640 (BI-COLOR) OK-41" },
-  { codigo: "1470715-0", articulo: "SC LEN D FTL FI 359 (TRI-COLOR)" },
-  { codigo: "1470815-0", articulo: "SC LEN D FTB FI 359 ( TRI-COLOR)" },
-  { codigo: "1471715-0", articulo: "SC LEN I FTL FI 359 (TRI-COLOR)" },
-  { codigo: "1471815-0", articulo: "SC LEN I FTB FI 359 ( TRI-COLOR)" },
-  { codigo: "1488715-0", articulo: "SC LEN D FARO TRASERO PE 208 BI-COLOR" },
-  { codigo: "1489715-0", articulo: "SC LEN I FARO TRASERO PE 208 BI-COLOR" },
-  { codigo: "1500715-0", articulo: "SC LEN D FT VW AMAROK PA2" },
-  { codigo: "1501715-0", articulo: "SC LEN I FT VW AMAROK PA2" }
+  { codigo: "1376715-0", articulo: "SC LEN D FTL PE 408 3V" , personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"]},
+  { codigo: "1377715-0", articulo: "SC LEN I FTL PE 408 3V" , personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1409715-0", articulo: "SC LEN I FT FI 326 (TRI-COLOR)", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1426715-0", articulo: "SC LEN D FT VW AMAROK (BI COLOR)", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1427715-0", articulo: "SC LEN I FT VW AMAROK (BI COLOR)", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1448715-0", articulo: "SC LEN D FT TO 640 (BI-COLOR) OK-41" , personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"]},
+  { codigo: "1449715-0", articulo: "SC LEN I FT TO 640 (BI-COLOR) OK-41", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1470715-0", articulo: "SC LEN D FTL FI 359 (TRI-COLOR)" , personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"]},
+  { codigo: "1470815-0", articulo: "SC LEN D FTB FI 359 ( TRI-COLOR)", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1471715-0", articulo: "SC LEN I FTL FI 359 (TRI-COLOR)" , personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"]},
+  { codigo: "1471815-0", articulo: "SC LEN I FTB FI 359 ( TRI-COLOR)", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1488715-0", articulo: "SC LEN D FARO TRASERO PE 208 BI-COLOR", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1489715-0", articulo: "SC LEN I FARO TRASERO PE 208 BI-COLOR", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1500715-0", articulo: "SC LEN D FT VW AMAROK PA2", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] },
+  { codigo: "1501715-0", articulo: "SC LEN I FT VW AMAROK PA2", personas: ["GHERUBETZ, FABRICIO EMILIANO", "OCHOA, CESAR FELIPE", "BUSTAMANTE, ORIANA AGOSTINA","FERREYRA, VANINA DE LOS ANGELES"] }
 ];
 
 // Catálogo especial para M1
@@ -331,7 +331,7 @@ const specialCatalogM1 = [
 
 // Catálogo especial para M2
 const specialCatalogM2 = [
-  { codigo: "1471000-0", articulo: "PRID I H7+H7 MM LL BAJA GAMA FI 359" },
+  { codigo: "1471000-0", articulo: "PRID I H7+H7 MM LL BAJA GAMA FI 359"  , personas: ["Persona A", "Persona B"]},
   { codigo: "1472000-0", articulo: "PRID D H7+H7 MM LL ALTA GAMA FI 359" },
   { codigo: "1473000-0", articulo: "PRID I H7+H7 MM LL ALTA GAMA FI 359" },
   { codigo: "1504004-1", articulo: "PROYECTOR DER H7+H15 MM BAJA GAMA FCA X6S FT" },
@@ -454,22 +454,35 @@ function switchGroup(group) {
         ["P13"].includes(machine) ? specialCatalogP13 :
         catalog;
 
+        
+
+            //recien agregado
+            ps.onchange = () => {
+      const producto = listaArticulos[ps.selectedIndex];
+      renderPersonas(producto?.personas || []);
+    };
+    //recien agregado
+        // 👇 Acá va la línea que preguntás
+      if (listaArticulos.length > 0) {
+        renderPersonas(listaArticulos[0].personas || []);
+      }
+
       listaArticulos.forEach(p => {
         const option = document.createElement("option");
         option.textContent = p.codigo ? `${p.codigo} - ${p.articulo}` : p.articulo;
         ps.appendChild(option);
       });
 
-      renderPersonas();
+    
     };
     list.appendChild(li);
   });
 }
-
-function renderPersonas() {
+ //recien agregado
+function renderPersonas(personas = []) {
   const container = document.getElementById("person-checkboxes");
   container.innerHTML = "";
-  ["Persona 1", "Persona 2", "Persona 3", "Persona 4"].forEach(p => {
+  personas.forEach(p => {
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -587,28 +600,10 @@ function editarAsignacion(index) {
   // Tipo readonly
   document.getElementById("edit-tipo").value = asignacion.tipo;
 
-  // Personas: Generar checkbox con personas disponibles y marcar las que están asignadas
-  const personasContainer = document.getElementById("edit-person-checkboxes");
-  personasContainer.innerHTML = ""; // limpio
-
-  const personasDisponibles = ["Persona 1", "Persona 2", "Persona 3", "Persona 4"]; // ajustá según las personas que tengas
-
-  personasDisponibles.forEach(p => {
-    const label = document.createElement("label");
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.value = p;
-    checkbox.checked = asignacion.personas.includes(p);
-    label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(" " + p));
-    personasContainer.appendChild(label);
-  });
-
   // Artículos: llenar select con el catálogo correspondiente y seleccionar el que está asignado
   const productSelect = document.getElementById("edit-product-select");
   productSelect.innerHTML = "";
 
-  // Usar la misma lógica que en switchGroup para elegir catálogo según asignacion.zap
   const listaArticulos =
     ["D10", "DT10", "DT5"].includes(asignacion.zap) ? specialCatalog :
     ["D11", "DT9"].includes(asignacion.zap) ? specialCatalogD11DT9 :
@@ -635,19 +630,40 @@ function editarAsignacion(index) {
   listaArticulos.forEach(p => {
     const option = document.createElement("option");
     option.textContent = p.codigo ? `${p.codigo} - ${p.articulo}` : p.articulo;
-    option.value = p.articulo; // usá el nombre como value para comparar
+    option.value = p.articulo; // usar el nombre como value
     productSelect.appendChild(option);
   });
 
   // Selecciono el artículo que está asignado
   productSelect.value = asignacion.articulo;
+
+  // Renderizar personas según el artículo seleccionado inicialmente
+  const productoActual = listaArticulos.find(p => p.articulo === asignacion.articulo);
+  renderEditPersonas(productoActual?.personas || [], asignacion.personas);
+
+  // Actualizar personas cuando cambie el artículo en el select
+  productSelect.onchange = () => {
+    const seleccionado = productSelect.value;
+    const producto = listaArticulos.find(p => p.articulo === seleccionado);
+    renderEditPersonas(producto?.personas || [], []);
+  };
 }
 
-function borrarAsignacion(index) {
-  if (confirm("¿Seguro que querés borrar esta asignación?")) {
-    assignments.splice(index, 1);
-    renderTablas();
-  }
+// Función auxiliar para renderizar checkboxes de personas en edición
+function renderEditPersonas(personasDisponibles = [], personasAsignadas = []) {
+  const container = document.getElementById("edit-person-checkboxes");
+  container.innerHTML = "";
+
+  personasDisponibles.forEach(p => {
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = p;
+    checkbox.checked = personasAsignadas.includes(p);
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(" " + p));
+    container.appendChild(label);
+  });
 }
 
 function guardarEdicion() {
@@ -657,7 +673,7 @@ function guardarEdicion() {
   const turno = document.getElementById("edit-turno").value;
   const zap = document.getElementById("edit-zap").value;
 
-  // Personas: leo los checkboxes
+  // Personas: leo los checkboxes en el modal de edición
   const checkboxes = document.querySelectorAll("#edit-person-checkboxes input[type=checkbox]");
   const personas = Array.from(checkboxes)
     .filter(cb => cb.checked)
@@ -714,6 +730,13 @@ function cerrarModal() {
   document.getElementById("edit-modal").style.display = "none";
 }
 
+
+function borrarAsignacion(index) {
+  if (confirm("¿Seguro que querés borrar esta asignación?")) {
+    assignments.splice(index, 1);
+    renderTablas();
+  }
+}
 
 function descargarPDF() {
   const { jsPDF } = window.jspdf;
